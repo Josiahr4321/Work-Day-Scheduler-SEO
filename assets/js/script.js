@@ -31,13 +31,15 @@ $("#currentDay").text(    dayjs().format("dddd, MMM, YYYY"))
       
       var timeBlock = $("<div>").addClass("row time-block ").attr("id", `hour-${i}`);
       var timeText;
+     
 
       if (i>12){
-        timeText=i-12
+        timeText=(i-12) +"PM"
       }
       else {
-        timeText=i
+        timeText=i +"AM"
       }
+    
 
       var hourDiv = $("<div>").addClass("col-2 col-md-1 hour text-center py-3").text(timeText);
       var textInput = $("<textarea>").addClass("col-8 col-md-10 description " + colorKey).attr("rows", "3").val(localStorage.getItem(`hour-${i}`))
